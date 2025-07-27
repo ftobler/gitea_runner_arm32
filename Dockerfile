@@ -12,9 +12,9 @@ RUN apt-get update && \
     git curl \
     libffi-dev pkg-config \
 #  && python3 -m venv /.venv \
- && pip install --no-cache-dir numpy matplotlib \
- && apt-get clean \
- && rm -rf /var/lib/apt/lists/*
- && RUN rm -rf /tmp/pip-*
+    && pip install --no-cache-dir numpy matplotlib \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* \
+    && RUN rm -rf /tmp/pip-*
 
 # scipy requires apt install gfortan

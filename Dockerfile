@@ -15,6 +15,6 @@ RUN apt-get update && \
     && pip install --no-cache-dir numpy matplotlib \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
-    && RUN rm -rf /tmp/pip-*
+    && RUN rm -rf /tmp/*
 
 # scipy requires apt install gfortan

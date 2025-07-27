@@ -16,7 +16,7 @@ RUN apt-get update && \
     && rm -rf /tmp/*
 
 # create venv
-RUN python3 -m venv /.venv
+RUN python3 -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
 # install python deps

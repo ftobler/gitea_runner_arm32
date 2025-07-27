@@ -12,7 +12,7 @@ RUN apt-get update && \
     git curl \
     libffi-dev pkg-config \
     && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
     && rm -rf /tmp/*
 
 # create venv

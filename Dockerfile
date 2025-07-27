@@ -24,7 +24,7 @@ ENV PATH="/opt/venv/bin:$PATH"
 RUN pip install --no-cache-dir pillow numpy matplotlib \
     && rm -rf /root/.cache /tmp/* \
     && python -c "import PIL" \
-    && python -c "from PIL import pillow" \
+    && python -c "from PIL import Image" \
     && python -c "import numpy" \
     && python -c "import matplotlib"
 

@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:plucky
 
 # Avoid interactive prompts
 ENV DEBIAN_FRONTEND=noninteractive
@@ -27,6 +27,10 @@ RUN pip install --no-cache-dir pillow numpy matplotlib \
     && python -c "from PIL import Image" \
     && python -c "import numpy" \
     && python -c "import matplotlib"
+
+# install scipy
+RUN apt-get install -y python3-scipy \
+    && python -c "import scipy"
 
 # install opencv
 RUN pip install --no-cache-dir opencv-python \

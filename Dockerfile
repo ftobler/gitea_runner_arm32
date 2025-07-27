@@ -21,7 +21,7 @@ RUN python3 -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
 # install python deps
-RUN pip install --no-cache-dir numpy matplotlib \
+RUN pip install --no-cache-dir pillow numpy matplotlib \
     && rm -rf /tmp/*
 
 # scipy requires apt install gfortan

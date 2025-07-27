@@ -23,7 +23,8 @@ ENV PATH="/opt/venv/bin:$PATH"
 # install python deps
 RUN pip install --no-cache-dir pillow numpy matplotlib \
     && rm -rf /root/.cache /tmp/* \
-    && python -c "import pillow" \
+    && python -c "import PIL" \
+    && python -c "from PIL import pillow" \
     && python -c "import numpy" \
     && python -c "import matplotlib"
 

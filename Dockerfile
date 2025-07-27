@@ -29,16 +29,7 @@ RUN pip install --no-cache-dir pillow numpy matplotlib \
     && python -c "import matplotlib"
 
 # install scipy
-RUN apt-get install -y \
-    gfortran \
-    && pip install --no-cache-dir scipy \
-    && apt-get remove gfortran \
-    && apt-get purge gfortran \
-    && apt-get autoremove \
-    && apt-get clean \
-    && rm -rf /root/.cache /tmp/* \
-    && rm -rf /var/lib/apt/lists/* \
-    && rm -rf /tmp/* \
+RUN apt-get install -y python3-scipy \
     && python -c "import scipy"
 
 # install opencv

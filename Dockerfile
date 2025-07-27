@@ -22,6 +22,24 @@ ENV PATH="/opt/venv/bin:$PATH"
 
 # install python deps
 RUN pip install --no-cache-dir pillow numpy matplotlib \
-    && rm -rf /tmp/*
+    && rm -rf /root/.cache /tmp/* \
+    && python -c "import pillow" \
+    && python -c "import numpy" \
+    && python -c "import matplotlib"
 
-# scipy requires apt install gfortan
+# install scipy
+RUN apt-get install -y \
+    gfortran \
+    && pip install --no-cache-dir scipy \
+    && apt-get remove gfortran \
+    && apt-get purge gfortran \
+    && apt-get autoremove \
+    && apt-get clean \
+    && rm -rf /root/.cache /tmp/* \
+    && rm -rf /var/lib/apt/lists/* \
+    && rm -rf /tmp/* \
+    && python -c "import scipy"
+
+# install opencv
+RUN pip install --no-cache-dir opencv-python \
+    && python -c "import cv2"

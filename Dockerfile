@@ -28,10 +28,6 @@ RUN pip install --no-cache-dir pillow numpy matplotlib \
     && python -c "import numpy" \
     && python -c "import matplotlib"
 
-# install scipy
-RUN apt-get install -y python3-scipy \
-    && python -c "import scipy"
-
 # install opencv
 RUN pip install --no-cache-dir opencv-python \
     && python -c "import cv2"

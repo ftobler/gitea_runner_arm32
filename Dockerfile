@@ -11,6 +11,7 @@ RUN apt-get update && \
     build-essential \
     git curl \
     libffi-dev pkg-config \
+    libjpeg \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /tmp/*

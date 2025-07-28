@@ -29,3 +29,7 @@ RUN pip install --no-cache-dir pillow numpy matplotlib \
     && python -c "import numpy" \
     && python -c "import matplotlib" \
     # && python -c "import cv2"
+
+RUN pip install --no-cache-dir pynacl \
+    && rm -rf /root/.cache /tmp/* \
+    && python -c "import nacl" \

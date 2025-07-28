@@ -21,7 +21,7 @@ RUN python3 -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
 # install python deps
-RUN pip install --no-cache-dir pillow numpy matplotlib <
+RUN pip install --no-cache-dir pillow numpy matplotlib \
     # opencv-python  \
     && rm -rf /root/.cache /tmp/* \
     && python -c "import PIL" \

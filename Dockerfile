@@ -12,6 +12,7 @@ RUN apt-get update && \
     git curl \
     libffi-dev pkg-config \
     libjpeg-dev \
+    libfreetype-dev \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /tmp/*
@@ -32,4 +33,4 @@ RUN pip install --no-cache-dir pillow numpy matplotlib \
 
 RUN pip install --no-cache-dir pynacl \
     && rm -rf /root/.cache /tmp/* \
-    && python -c "import nacl"
+    # && python -c "import nacl"

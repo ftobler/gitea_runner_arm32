@@ -32,4 +32,4 @@ RUN pip install --no-cache-dir pillow numpy matplotlib \
 
 RUN pip install --no-cache-dir pynacl \
     && rm -rf /root/.cache /tmp/* \
-    && python -c "import nacl" \
+    && python -c "import nacl"

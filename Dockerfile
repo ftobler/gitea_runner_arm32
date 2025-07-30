@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:24.04
 
 # Avoid interactive prompts
 ENV DEBIAN_FRONTEND=noninteractive
@@ -22,15 +22,11 @@ RUN python3 -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
 # install python deps
-RUN pip install --no-cache-dir pillow numpy matplotlib \
-    # opencv-python  \
+RUN pip install --no-cache-dir \
+    pillow numpy matplotlib pynacl \
     && rm -rf /root/.cache /tmp/* \
     && python -c "import PIL" \
     && python -c "from PIL import Image" \
     && python -c "import numpy" \
     && python -c "import matplotlib" \
-    # && python -c "import cv2"
-
-RUN pip install --no-cache-dir pynacl \
-    && rm -rf /root/.cache /tmp/* \
-    # && python -c "import nacl"
+    && python -c "import nacl"
